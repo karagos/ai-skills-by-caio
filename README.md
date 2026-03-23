@@ -36,7 +36,7 @@ When triggered, it scans the full conversation, extracts decisions, classifies e
 - Executable next steps
 - One-paste resume prompt for the new chat
 
-**Installation:** Copy `skills/handoff-by-caio/SKILL.md` into your Claude Project's knowledge base.
+**Files needed:** `SKILL.md` only. See [How to Install](#how-to-install-a-skill) below.
 
 ---
 
@@ -61,39 +61,62 @@ Seven modes. Each applies a different dimension of Sun Tzu's intelligence to you
 | `/terrain` | Terrain Map | Map new territory before entering it. |
 | `/negotiate` | Negotiation Table | Enter a negotiation with Sun Tzu's counsel. |
 
-**Installation:** Copy `skills/the-sun-tzu-lens/SKILL.md` and the `references/` folder into your Claude Project's knowledge base.
+**Files needed:** `SKILL.md` + the `references/` folder. See [How to Install](#how-to-install-a-skill) below.
 
 For the full story behind this skill, see the [skill's README](skills/the-sun-tzu-lens/README.md).
 
 ---
 
-## How to Use These Skills
+## How to Install a Skill
 
-**For Claude Projects (claude.ai):**
-1. Open or create a Claude Project
-2. Navigate to the skill folder you want
-3. Add the `SKILL.md` file (and any `references/` folder) to your project's knowledge base
-4. Start using the skill's commands
+Each skill is self-contained. Pick the one you want, follow the steps for your setup, and you're ready to go.
 
-**For Claude Cowork:**
-1. Drop the skill folder into your Cowork skills directory
-2. The skill activates automatically based on trigger phrases
+### Option 1: Claude.ai (Projects)
 
-Each skill is self-contained. No dependencies between them. Install one or all.
+This works for anyone with a Claude Pro, Team, or Enterprise account.
 
----
+1. Go to [claude.ai](https://claude.ai) and open an existing **Project** (or create a new one)
+2. Click the **Project Knowledge** section (the area where you add files and instructions)
+3. Download the skill's `SKILL.md` file from this repo. If the skill has a `references/` folder, download those files too
+4. Upload all the files into your Project Knowledge
+5. Start a new conversation inside that Project and use the skill's commands
 
-## Adding a New Skill
+That's it. The skill is now active in every conversation within that Project.
 
-When adding a new skill to this repo:
+### Option 2: Claude Cowork (Desktop App)
 
-1. Create a folder under `skills/` with a lowercase, hyphenated name
-2. Include at minimum a `SKILL.md` with proper frontmatter (name, description)
-3. Add a `README.md` if the skill needs explanation beyond the SKILL.md
-4. Place any reference files in a `references/` subfolder
-5. Update this README: add a row to the **Skills Catalog** table and a new section under **Skill Showcase**
+Cowork lets you install skills as uploadable ZIP files.
 
-See any existing skill folder for the expected structure.
+1. Download the skill folder from this repo (e.g., `skills/handoff-by-caio/`)
+2. **Package it as a ZIP file.** The ZIP must contain the skill folder at its root:
+   ```
+   handoff-by-caio.zip
+   └── handoff-by-caio/
+       ├── SKILL.md
+       └── (any other files)
+   ```
+3. Open the Claude Desktop app and switch to **Cowork**
+4. Go to **Customize > Skills** in the left sidebar
+5. Click **"+"** then **"Upload a skill"**
+6. Select your ZIP file
+7. The skill appears in your Skills list. Toggle it on.
+
+**Prerequisite:** Make sure **Code execution and file creation** is enabled in Settings > Capabilities.
+
+### Option 3: Claude Code (CLI)
+
+For developers using Claude Code in the terminal:
+
+1. Clone this repo or download the skill folder you want
+2. Copy the skill folder into your project's `.claude/skills/` directory:
+   ```bash
+   cp -r skills/the-sun-tzu-lens .claude/skills/
+   ```
+3. Claude Code picks it up automatically on the next conversation
+
+### Quick Download Tip
+
+To grab a single skill folder without cloning the whole repo, you can use the GitHub web interface: navigate to the skill folder, click the three-dot menu (or use "Download directory" browser extensions), and download just that folder.
 
 ---
 
