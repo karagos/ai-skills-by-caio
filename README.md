@@ -43,7 +43,7 @@ When triggered, it scans the full conversation, extracts decisions, classifies e
 ### The Sun Tzu Lens
 
 **Category:** Executive Strategy
-**Triggers:** `/warcouncil` `/lens` `/enemy` `/audit` `/debrief` `/terrain` `/negotiate` `/suntzu` `/help`
+**Triggers:** `/warcouncil` `/lens` `/enemy` `/audit` `/debrief` `/terrain` `/negotiate` `/suntzu` `/suntzuhelp`
 
 Every executive decision has a geometry. Most executives never see it. The Sun Tzu Lens applies 2,500 years of strategic logic to the specific terrain in front of you, grounded in what is happening in the world today (not in a textbook).
 
