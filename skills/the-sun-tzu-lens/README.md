@@ -42,7 +42,7 @@ Seven modes. Each one applies a different dimension of Sun Tzu's strategic intel
 
 **Negotiation Table** `/negotiate`: The Lens maps power dynamics, assesses timing, identifies the move that wins without fighting, and names the trap the other party wants you to walk into.
 
-Type `/help` for the full command reference with ready-to-use examples.
+Type `/suntzuhelp` for the full command reference with ready-to-use examples.
 
 ---
 
@@ -98,7 +98,7 @@ Three steps. Under two minutes.
 2. **Create a new Claude Project** (or open an existing one).
 3. **Add the SKILL.md and the references folder** to your project's knowledge base.
 
-That is it. Type `/help` in your first message and the Lens will brief you on all seven modes with ready-to-use examples.
+That is it. Type `/suntzuhelp` in your first message and the Lens will brief you on all seven modes with ready-to-use examples.
 
 For **Claude CoWork** users: the same SKILL.md works natively. Drop local files directly into the conversation for deeper analysis with `/lens` and `/terrain`.
 
