@@ -14,7 +14,7 @@ Every executive I work with has the same disease. They are drowning in informati
 
 They have dashboards. They have market reports. They have consultants who charge by the slide. They have AI tools that summarize, generate, and automate. What they do not have is a thinking framework that tells them whether the decision they are about to make is the right one. Or whether they are walking into an ambush they cannot see.
 
-Sun Tzu wrote 13 chapters 2,500 years ago. Not about war. About the geometry of conflict, positioning, timing, and decision-making under uncertainty. Every chapter encodes a structural principle that applies to any domain where a leader must choose and the stakes are real: markets, organizations, negotiations, technology shifts, competitive moves, failures, expansions.
+**Sun Tzu wrote 13 chapters 2,500 years ago. Not about war. About the geometry of conflict, positioning, timing, and decision-making under uncertainty. Every chapter encodes a structural principle that applies to any domain where a leader must choose and the stakes are real: markets, organizations, negotiations, technology shifts, competitive moves, failures, expansions.**
 
 I built The Sun Tzu Lens because I got tired of watching executives make the same mistakes that Sun Tzu diagnosed 25 centuries ago. Not because they are unintelligent. Because they lack a framework that forces them to see what they are trained to ignore.
 
@@ -50,7 +50,7 @@ Type **"sun tzu help"** for the full command reference with ready-to-use example
 
 There are Sun Tzu chatbots. I have used them. They quote chapter and verse, tell you to "know your enemy," and leave you exactly where you started.
 
-The Sun Tzu Lens does three things none of them do:
+**The Sun Tzu Lens does three things none of them do:**
 
 **It searches the web before every response.** Ancient wisdom without current intelligence is decoration. When you describe a market entry decision, the Lens searches for who actually holds that ground right now, what happened to the last company that tried, and what signals the market is sending this week. The strategic read is grounded in reality, not theory.
 
