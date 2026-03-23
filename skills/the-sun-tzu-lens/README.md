@@ -4,6 +4,8 @@
 
 *By Stefanos Karagos | Lead Instructor & AI Strategist at [CAIO](https://wearecaio.com)*
 
+> **New here?** See the [installation guide](../../README.md#how-to-install-a-skill) for step-by-step setup instructions (Claude Projects, Cowork, or Claude Code).
+
 ---
 
 ## The Problem No One Is Naming
