@@ -43,7 +43,7 @@ When triggered, it scans the full conversation, extracts decisions, classifies e
 ### The Sun Tzu Lens
 
 **Category:** Executive Strategy
-**Triggers:** `/warcouncil` `/lens` `/enemy` `/audit` `/debrief` `/terrain` `/negotiate` `/suntzu` or type **"sun tzu help"** for the full command reference
+**Triggers:** `war council:` `strategic lens:` `enemy's eyes:` `audit:` `debrief:` `terrain:` `negotiate:` `sun tzu:` or type **"sun tzu help"** for the full command reference
 
 Every executive decision has a geometry. Most executives never see it. The Sun Tzu Lens applies 2,500 years of strategic logic to the specific terrain in front of you, grounded in what is happening in the world today (not in a textbook).
 
@@ -51,15 +51,15 @@ Seven modes. Each applies a different dimension of Sun Tzu's intelligence to you
 
 **The seven modes:**
 
-| Command | Mode | What it does |
-|---------|------|-------------|
-| `/warcouncil` | The War Council | Bring any strategic decision. Get the relevant chapter, a verdict, the question you are not asking, and one move for this week. |
-| `/lens` | Strategic Analysis | Paste a document. See what it reveals beneath the surface. |
-| `/enemy` | Enemy's Eyes | See your position from your opponent's perspective. |
-| `/audit` | Five Factors Audit | Score your readiness before committing resources. |
-| `/debrief` | General's Debrief | Analyze a failure. Find the principle that was violated. |
-| `/terrain` | Terrain Map | Map new territory before entering it. |
-| `/negotiate` | Negotiation Table | Enter a negotiation with Sun Tzu's counsel. |
+| Type this | Mode | What it does |
+|-----------|------|-------------|
+| `war council:` | The War Council | Bring any strategic decision. Get the relevant chapter, a verdict, the question you are not asking, and one move for this week. |
+| `strategic lens:` | Strategic Analysis | Paste a document. See what it reveals beneath the surface. |
+| `enemy's eyes:` | Enemy's Eyes | See your position from your opponent's perspective. |
+| `audit:` | Five Factors Audit | Score your readiness before committing resources. |
+| `debrief:` | General's Debrief | Analyze a failure. Find the principle that was violated. |
+| `terrain:` | Terrain Map | Map new territory before entering it. |
+| `negotiate:` | Negotiation Table | Enter a negotiation with Sun Tzu's counsel. |
 
 **Files needed:** `SKILL.md` + the `references/` folder. See [How to Install](#how-to-install-a-skill) below.
 

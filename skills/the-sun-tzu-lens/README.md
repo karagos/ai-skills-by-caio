@@ -28,19 +28,19 @@ The Sun Tzu Lens is a Claude skill. A SKILL.md file you add to a Claude Project.
 
 Seven modes. Each one applies a different dimension of Sun Tzu's strategic intelligence to your specific decision.
 
-**The War Council** `/warcouncil`: Bring any strategic decision. The Lens identifies which of the 13 chapters governs your terrain, applies the structural logic, finds a current real-world parallel, and returns a verdict, a question you have not asked, and one move for this week.
+**The War Council** (type `war council:`): Bring any strategic decision. The Lens identifies which of the 13 chapters governs your terrain, applies the structural logic, finds a current real-world parallel, and returns a verdict, a question you have not asked, and one move for this week.
 
-**Strategic Analysis Lens** `/lens`: Paste a document. A competitor's press release. A board deck. A vendor proposal. The Lens reads it through Sun Tzu's eyes and tells you what the document reveals that its author did not intend.
+**Strategic Analysis Lens** (type `strategic lens:`): Paste a document. A competitor's press release. A board deck. A vendor proposal. The Lens reads it through Sun Tzu's eyes and tells you what the document reveals that its author did not intend.
 
-**Enemy's Eyes** `/enemy`: Describe your position. The Lens flips the table. It analyses your situation entirely from your opponent's perspective. Where you think you are strong but are not. The move they are planning. Your real vulnerability.
+**Enemy's Eyes** (type `enemy's eyes:`): Describe your position. The Lens flips the table. It analyses your situation entirely from your opponent's perspective. Where you think you are strong but are not. The move they are planning. Your real vulnerability.
 
-**Five Factors Audit** `/audit`: Before you commit budget, people, and reputation, Sun Tzu's five-factor diagnostic scores your readiness and identifies the single gap that will kill the initiative if unaddressed.
+**Five Factors Audit** (type `audit:`): Before you commit budget, people, and reputation, Sun Tzu's five-factor diagnostic scores your readiness and identifies the single gap that will kill the initiative if unaddressed.
 
-**The General's Debrief** `/debrief`: Something failed. The Lens identifies which principle was violated, when the decision was actually lost, and the warning sign that was visible and ignored.
+**The General's Debrief** (type `debrief:`): Something failed. The Lens identifies which principle was violated, when the decision was actually lost, and the warning sign that was visible and ignored.
 
-**Terrain Map** `/terrain`: Before entering new territory, the Lens maps who holds the high ground, where supply lines are vulnerable, and where ambush is most likely.
+**Terrain Map** (type `terrain:`): Before entering new territory, the Lens maps who holds the high ground, where supply lines are vulnerable, and where ambush is most likely.
 
-**Negotiation Table** `/negotiate`: The Lens maps power dynamics, assesses timing, identifies the move that wins without fighting, and names the trap the other party wants you to walk into.
+**Negotiation Table** (type `negotiate:`): The Lens maps power dynamics, assesses timing, identifies the move that wins without fighting, and names the trap the other party wants you to walk into.
 
 Type **"sun tzu help"** for the full command reference with ready-to-use examples.
 
@@ -67,7 +67,7 @@ Here is what it looks like in practice.
 **Executive input:**
 
 ```
-/warcouncil We are a B2B SaaS company ($45M ARR) in the supply chain
+war council: We are a B2B SaaS company ($45M ARR) in the supply chain
 visibility space. Our largest competitor just raised $200M and announced
 they are moving into our core mid-market segment. We have 18 months of
 runway. The board wants an aggressive response. I am not sure aggression
@@ -100,7 +100,7 @@ Three steps. Under two minutes.
 
 That is it. Type **"sun tzu help"** in your first message and the Lens will brief you on all seven modes with ready-to-use examples.
 
-For **Claude CoWork** users: the same SKILL.md works natively. Drop local files directly into the conversation for deeper analysis with `/lens` and `/terrain`.
+For **Claude Cowork** users: the same SKILL.md works natively. Drop local files directly into the conversation for deeper analysis with `strategic lens:` and `terrain:`.
 
 ---
 
