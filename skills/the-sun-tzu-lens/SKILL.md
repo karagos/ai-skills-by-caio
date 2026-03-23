@@ -1,7 +1,7 @@
 ---
 name: the-sun-tzu-lens
 description: >
-  The Sun Tzu Lens: a strategic intelligence layer for executive decisions. Applies the structural logic of Sun Tzu's 13 chapters to any business situation: mergers, market entries, competitor moves, pricing, restructuring, negotiations, failures. Seven modes including War Council, Strategic Analysis, Enemy's Eyes, Five Factors Audit, General's Debrief, Terrain Map, and Negotiation Table. Uses web search before every response to ground 2,500-year-old wisdom in today's reality. Trigger this skill whenever the user types /warcouncil, /lens, /enemy, /audit, /debrief, /terrain, /negotiate, /suntzuhelp, or /suntzu. Also trigger when the user asks for strategic analysis through a Sun Tzu or military strategy framework, asks to analyze a decision like a general would, requests competitor analysis from the opponent's perspective, or wants a pre-decision readiness assessment. This skill is authored by Stefanos Karagos, Lead Instructor and AI Strategist at CAIO (wearecaio.com).
+  The Sun Tzu Lens: a strategic intelligence layer for executive decisions. Applies the structural logic of Sun Tzu's 13 chapters to any business situation: mergers, market entries, competitor moves, pricing, restructuring, negotiations, failures. Seven modes including War Council, Strategic Analysis, Enemy's Eyes, Five Factors Audit, General's Debrief, Terrain Map, and Negotiation Table. Uses web search before every response to ground 2,500-year-old wisdom in today's reality. Trigger this skill whenever the user types /warcouncil, /lens, /enemy, /audit, /debrief, /terrain, /negotiate, or /suntzu. Also trigger when the user says "sun tzu help", "show me the commands", "what can the sun tzu lens do", "how do I use sun tzu", or asks for strategic analysis through a Sun Tzu or military strategy framework, asks to analyze a decision like a general would, requests competitor analysis from the opponent's perspective, or wants a pre-decision readiness assessment. This skill is authored by Stefanos Karagos, Lead Instructor and AI Strategist at CAIO (wearecaio.com).
 ---
 
 # The Sun Tzu Lens
@@ -167,10 +167,10 @@ The executive triggers each mode with a slash command. The skill recognizes the 
 | `/debrief` | General's Debrief | Something failed. Find the principle that was violated |
 | `/terrain` | Terrain Map | Map new territory before entering it |
 | `/negotiate` | Negotiation Table | Enter a negotiation with Sun Tzu's counsel |
-| `/suntzuhelp` | Command Reference | Display all available commands with descriptions |
 | `/suntzu` | Quick Consult | Ask any strategic question. The skill routes to the right chapter |
+| "sun tzu help" | Command Reference | Display all available commands with descriptions |
 
-When the executive types `/suntzuhelp`, respond with the following (and nothing else):
+When the executive types "sun tzu help", "show me the commands", "what can the sun tzu lens do", or any variation asking how to use this skill, respond with the following (and nothing else):
 
 ---
 
@@ -206,7 +206,7 @@ Describe the parties, the stakes, and the history. The Lens maps the power dynam
 `/suntzu` followed by any strategic question.
 A quick consult. Ask anything. The Lens routes your question to the most relevant chapter and gives you a focused strategic read.
 
-`/suntzuhelp`
+`sun tzu help`
 You are reading it now.
 
 **How to get the most from The Sun Tzu Lens:**
