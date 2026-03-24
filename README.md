@@ -1,6 +1,6 @@
 # AI Skills by CAIO
 
-Custom AI skills built by [Stefanos Karagos](https://www.linkedin.com/in/stefanoskaragos/), Lead Instructor & Senior GenAI Consultant at [CAIO](https://wearecaio.com).
+Custom AI skills built by [Stefanos Karagos](https://www.linkedin.com/in/karagos/), Lead Instructor & Senior GenAI Consultant at [CAIO Group](https://wearecaio.com).
 
 These are production-grade skills designed for Claude Projects and Claude Cowork. Each one encodes a specific workflow, methodology, or thinking framework that turns Claude into a specialized operator for a defined task.
 
