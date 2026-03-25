@@ -126,7 +126,7 @@ CAIO helps executives and corporate teams move beyond basic AI tool usage to str
 
 **Core philosophy:** AI is an intelligence to communicate with, not a tool to operate.
 
-Visit [wearecaio.com](https://wearecaio.com) or connect with [Stefanos on LinkedIn](https://www.linkedin.com/in/stefanoskaragos/).
+Visit [wearecaio.com](https://wearecaio.com) or connect with [Stefanos on LinkedIn](https://www.linkedin.com/in/karagos/).
 
 ---
 
