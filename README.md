@@ -1,4 +1,4 @@
-# AI Skills by CAIO
+# AI Skills by CAIO Group
 
 Custom AI skills built by [Stefanos Karagos](https://www.linkedin.com/in/karagos/), Lead Instructor & Senior GenAI Consultant at [CAIO Group](https://wearecaio.com).
 
@@ -120,9 +120,9 @@ To grab a single skill folder without cloning the whole repo, you can use the Gi
 
 ---
 
-## About CAIO
+## About CAIO Group
 
-CAIO helps executives and corporate teams move beyond basic AI tool usage to strategic AI collaboration. Not tool training. Capability building.
+CAIO Group helps executives and corporate teams move beyond basic AI tool usage to strategic AI collaboration. Not tool training. Capability building.
 
 **Core philosophy:** AI is an intelligence to communicate with, not a tool to operate.
 
