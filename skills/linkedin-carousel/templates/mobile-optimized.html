@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ cover.hook }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    Mobile-Optimized Template
+    Max contrast, oversized type, tight margins, minimal decoration.
+    Designed for LinkedIn mobile feed where thumbs scroll fast.
+  */
+  @page { size: 1080px 1350px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; }
+  body {
+    font-family: {{ typography.body_family | safe }};
+    color: {{ palette.ink }};
+    background: {{ palette.background }};
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    padding: 72px 64px 72px 64px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    break-after: page;
+    overflow: hidden;
+    background: {{ palette.background }};
+  }
+  .slide:last-child { break-after: auto; }
+
+  .accent-block {
+    width: 48px;
+    height: 48px;
+    background: {{ palette.primary }};
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 40px;
+    left: 64px;
+    right: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: {{ typography.body_family | safe }};
+    font-size: 24px;
+    font-weight: 600;
+    color: {{ palette.ink }};
+    letter-spacing: 0.3px;
+  }
+
+  /* Cover */
+  .cover { justify-content: center; }
+  .cover .hook {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 110px;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: {{ palette.ink }};
+    margin-bottom: 40px;
+  }
+  .cover .hook .accent {
+    background: {{ palette.primary }};
+    color: {{ palette.on_primary }};
+    padding: 0 16px;
+    display: inline-block;
+    line-height: 1.1;
+  }
+  .cover .subline {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: {{ palette.ink }};
+    max-width: 900px;
+  }
+  .cover .swipe {
+    position: absolute;
+    bottom: 120px;
+    left: 64px;
+    font-family: {{ typography.body_family | safe }};
+    font-size: 32px;
+    font-weight: 700;
+    color: {{ palette.primary }};
+  }
+
+  /* Body — oversized */
+  .body-slide { justify-content: flex-start; padding-top: 96px; }
+  .body-slide .slide-title {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: {{ typography.sizes.slide_title_mobile }}px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: {{ palette.ink }};
+    margin-bottom: 40px;
+    max-width: 940px;
+  }
+  .body-slide .slide-body {
+    font-family: {{ typography.body_family | safe }};
+    font-size: {{ typography.sizes.slide_body_mobile }}px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: {{ palette.ink }};
+    max-width: 940px;
+  }
+  .body-slide .slide-body strong {
+    font-weight: 700;
+    background: linear-gradient(180deg, transparent 60%, {{ palette.primary }} 60%, {{ palette.primary }} 100%);
+    padding: 0 4px;
+  }
+
+  /* Takeaway — high impact */
+  .takeaway {
+    background: {{ palette.ink }};
+    color: {{ palette.background }};
+    justify-content: center;
+  }
+  .takeaway .accent-block { background: {{ palette.primary }}; }
+  .takeaway .label {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: {{ palette.primary }};
+    margin-bottom: 32px;
+  }
+  .takeaway .title {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 96px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: {{ palette.background }};
+    margin-bottom: 32px;
+    max-width: 940px;
+  }
+  .takeaway .body {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.9);
+    max-width: 900px;
+  }
+  .takeaway .footer { color: rgba(255,255,255,0.65); }
+
+  /* CTA */
+  .cta {
+    background: {{ palette.primary }};
+    color: {{ palette.on_primary }};
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cta .avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: {{ palette.on_primary }};
+    margin-bottom: 48px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .cta .avatar .placeholder {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 80px;
+    color: {{ palette.primary }};
+  }
+  .cta .primary {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 68px;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    max-width: 900px;
+    letter-spacing: -0.02em;
+  }
+  .cta .secondary {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 38px;
+    font-weight: 600;
+    opacity: 0.95;
+  }
+  .cta .footer-inverse {
+    position: absolute;
+    bottom: 40px;
+    font-family: {{ typography.body_family | safe }};
+    font-size: 24px;
+    font-weight: 600;
+    color: {{ palette.on_primary }};
+  }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<section class="slide cover">
+  <div class="accent-block"></div>
+  <h1 class="hook">{{ cover.hook | safe }}</h1>
+  {% if cover.subline %}<p class="subline">{{ cover.subline }}</p>{% endif %}
+  <div class="swipe">Swipe →</div>
+  <div class="footer">
+    <span>{{ brand.footer_line }}</span>
+    <span>01</span>
+  </div>
+</section>
+
+<!-- Body -->
+{% for slide in slides %}
+<section class="slide body-slide">
+  <div class="accent-block"></div>
+  <h2 class="slide-title">{{ slide.title }}</h2>
+  <p class="slide-body">{{ slide.body | safe }}</p>
+  <div class="footer">
+    <span>{{ brand.footer_line }}</span>
+    <span>{{ '%02d' % (loop.index + 1) }}</span>
+  </div>
+</section>
+{% endfor %}
+
+<!-- Takeaway -->
+<section class="slide takeaway">
+  <div class="accent-block"></div>
+  <div class="label">The takeaway</div>
+  <h2 class="title">{{ takeaway.title }}</h2>
+  <p class="body">{{ takeaway.body }}</p>
+  <div class="footer">
+    <span>{{ brand.footer_line }}</span>
+    <span>{{ '%02d' % (slides|length + 2) }}</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="slide cta">
+  <div class="avatar">
+    {% if headshot_path %}
+      <img src="{{ headshot_path }}" alt="{{ brand.owner_name }}">
+    {% else %}
+      <span class="placeholder">{{ brand.initials }}</span>
+    {% endif %}
+  </div>
+  <div class="primary">{{ cta.primary }}</div>
+  <div class="secondary">{{ cta.secondary }}</div>
+  <div class="footer-inverse">{{ brand.footer_line }}</div>
+</section>
+
+</body>
+</html>

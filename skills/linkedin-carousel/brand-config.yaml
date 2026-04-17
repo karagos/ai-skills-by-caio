@@ -1,0 +1,110 @@
+# LinkedIn Carousel — Brand Configuration
+# Single source of truth for colors, typography, footer text, and assets.
+# Edit this file ONCE to make every carousel match your personal or company brand.
+
+brand:
+  owner_name: "Your Name"
+  company: "Your Company"
+  website: "yourwebsite.com"
+  positioning: "Your Role / Tagline"
+  # Footer line appears on every slide. Keep it short.
+  footer_line: "your name | yourwebsite.com"
+
+# ----- Palettes --------------------------------------------------------------
+# brand: default, used for most carousels.
+# mobile: higher contrast, tuned for small-screen LinkedIn feed reading.
+# Edit the hex values below to match your brand colors.
+
+palettes:
+  brand:
+    primary: "#d97757"          # Main accent color (orange default)
+    primary_dark: "#b85d40"     # Darker variant for accents
+    background: "#ffffff"       # Default slide background
+    surface: "#faf7f5"          # Warm off-white for card surfaces
+    ink: "#1a1a1a"              # Primary text on light
+    ink_muted: "#5a5a5a"        # Secondary text
+    on_primary: "#ffffff"       # Text on primary color
+    footer_muted: "#f0c3b4"     # Footer text tone on primary slides
+    divider: "#e8e2dd"
+
+  mobile:
+    primary: "#c45a3a"          # Deeper primary, better mobile contrast
+    primary_dark: "#8e3f26"
+    background: "#ffffff"
+    surface: "#ffffff"
+    ink: "#0d0d0d"              # Near-black for max legibility
+    ink_muted: "#3a3a3a"
+    on_primary: "#ffffff"
+    footer_muted: "#d4d4d4"
+    divider: "#cccccc"
+
+# ----- Typography ------------------------------------------------------------
+# Poppins + Work Sans are free Google Fonts. Swap for your own if needed.
+
+typography:
+  heading_family: "Poppins, 'Helvetica Neue', Arial, sans-serif"
+  body_family: "'Work Sans', 'Helvetica Neue', Arial, sans-serif"
+  mono_family: "'JetBrains Mono', Menlo, Consolas, monospace"
+
+  # Sizes are in px at 1080x1350 canvas.
+  sizes:
+    cover_hook: 96
+    cover_subline: 36
+    slide_title: 64
+    slide_title_mobile: 72
+    slide_body: 38
+    slide_body_mobile: 48
+    quote_forward_main: 88
+    number_badge: 72
+    footer: 22
+    cta_primary: 54
+    cta_secondary: 32
+
+  weights:
+    bold: 700
+    semibold: 600
+    medium: 500
+    regular: 400
+
+# ----- Layout ----------------------------------------------------------------
+
+canvas:
+  width: 1080
+  height: 1350
+  padding:
+    top: 96
+    bottom: 96
+    left: 88
+    right: 88
+
+# ----- Assets ---------------------------------------------------------------
+# Drop your own files here:
+#   assets/logo.svg (or .png)
+#   assets/headshot.png (square, 500x500 min)
+# If either is missing, templates fall back to initials or hide the element.
+
+assets:
+  logo: "assets/logo.svg"
+  headshot: "assets/headshot.png"
+
+# ----- Copy rules (enforced pre-render) -------------------------------------
+# These protect against common AI writing tells.
+
+copy_rules:
+  forbidden_chars: ["—"]           # No em dashes ever
+  forbidden_phrases:
+    - "delve into"
+    - "navigate"
+    - "landscape"
+    - "leverage"
+    - "Moreover,"
+    - "Furthermore,"
+    - "Additionally,"
+    - "somewhat"
+    - "relatively"
+    - "fairly"
+    - "quite"
+  max_chars:
+    slide_title: 70
+    slide_body: 220
+    cover_hook: 90

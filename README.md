@@ -14,6 +14,7 @@ Not prompts. Not templates. Operational intelligence.
 |-------|-------------|------|
 | [Handoff by CAIO](skills/handoff-by-caio/) | Move any Claude conversation to a new chat with zero re-explanation. Generates a structured handoff file with full context, classified artifacts, and a paste-ready resume prompt. | Workflow |
 | [The Sun Tzu Lens](skills/the-sun-tzu-lens/) | Strategic intelligence layer for executives. Applies Sun Tzu's 13-chapter framework to real business decisions with live web research. Seven modes including War Council, Enemy's Eyes, and Negotiation Table. | Strategy |
+| [LinkedIn Carousel](skills/linkedin-carousel/) | Turn any text, URL, or document into an on-brand LinkedIn carousel PDF. Four templates (executive-minimal, training-breakdown, quote-forward, mobile-optimized). Fully brandable via one YAML file. | Content |
 
 ---
 
@@ -67,6 +68,34 @@ For the full story behind this skill, see the [skill's README](skills/the-sun-tz
 
 ---
 
+### LinkedIn Carousel
+
+**Category:** Content Production
+**Trigger:** "make a LinkedIn carousel about X" or "turn this article into a carousel"
+
+LinkedIn rewards carousels. Multi-slide posts get roughly 3x the dwell time of plain text updates, and the algorithm keeps resurfacing them for days. Building one from scratch every time is the reason most people never publish them.
+
+This skill turns a topic, an article, or an uploaded document into a 7-slide carousel PDF (1080x1350, LinkedIn's preferred aspect ratio). Four layout templates cover the most common use cases. All four read from a single `brand-config.yaml` file: change your color, fonts, and footer once, and every future carousel matches.
+
+**The four templates:**
+
+| Template | When to use it |
+|----------|----------------|
+| `executive-minimal` | Strategic takes, leadership posts, opinion pieces |
+| `training-breakdown` | Step-by-step frameworks, numbered methodologies, teaching content |
+| `quote-forward` | Big-idea posts, manifestos, punchy declarative content |
+| `mobile-optimized` | Maximum-readability posts for phone-first feeds |
+
+**What it produces:** a ready-to-upload PDF with a cover hook, 3-5 body slides, a takeaway, and a CTA slide. Your headshot appears on the CTA (or your initials on a colored circle if no headshot is uploaded).
+
+**Design rules enforced at render time:** no em dashes, no AI filler phrases ("delve," "leverage," "landscape," "navigate"), no hedging words. Executive copy that reads naturally out loud.
+
+**Files needed:** the full `skills/linkedin-carousel/` folder, plus `playwright`, `jinja2`, and `pyyaml` installed. One-line setup command is in the [skill's README](skills/linkedin-carousel/README.md).
+
+**One-click install for Cowork users:** download [`releases/linkedin-carousel.plugin`](releases/linkedin-carousel.plugin) and drop it into Claude Desktop under **Customize > Skills > Upload a skill**.
+
+---
+
 ## How to Install a Skill
 
 Each skill is self-contained. Pick the one you want, follow the steps for your setup, and you're ready to go.
@@ -85,7 +114,17 @@ That's it. The skill is now active in every conversation within that Project.
 
 ### Option 2: Claude Cowork (Desktop App)
 
-Cowork lets you install skills as uploadable ZIP files.
+Cowork lets you install skills as uploadable ZIP files or pre-built `.plugin` bundles.
+
+**Fastest path (if a `.plugin` file is available):**
+
+1. Check the `releases/` folder in this repo (e.g., `releases/linkedin-carousel.plugin`)
+2. Download the `.plugin` file
+3. Open Claude Desktop, switch to **Cowork**
+4. Go to **Customize > Skills**, click **"+"** then **"Upload a skill"**
+5. Select the `.plugin` file. Toggle it on.
+
+**Manual path (any skill in this repo):**
 
 1. Download the skill folder from this repo (e.g., `skills/handoff-by-caio/`)
 2. **Package it as a ZIP file.** The ZIP must contain the skill folder at its root:

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ cover.hook }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; }
+  body {
+    font-family: {{ typography.body_family | safe }};
+    color: {{ palette.ink }};
+    background: {{ palette.background }};
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    padding: {{ canvas.padding.top }}px {{ canvas.padding.right }}px {{ canvas.padding.bottom }}px {{ canvas.padding.left }}px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-child { break-after: auto; }
+
+  .eyebrow {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: {{ palette.primary }};
+    margin-bottom: 32px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 48px;
+    left: {{ canvas.padding.left }}px;
+    right: {{ canvas.padding.right }}px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: {{ typography.body_family | safe }};
+    font-size: {{ typography.sizes.footer }}px;
+    color: {{ palette.ink_muted }};
+    letter-spacing: 0.5px;
+  }
+  .footer .brand { font-weight: 500; }
+
+  /* Cover */
+  .cover {
+    justify-content: center;
+    background:
+      linear-gradient(180deg, {{ palette.background }} 0%, {{ palette.surface }} 100%);
+  }
+  .cover .number {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 260px;
+    line-height: 1;
+    color: {{ palette.primary }};
+    opacity: 0.12;
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    letter-spacing: -0.05em;
+  }
+  .cover .hook {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 88px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: {{ palette.ink }};
+    margin-bottom: 40px;
+    max-width: 900px;
+  }
+  .cover .hook .accent { color: {{ palette.primary }}; }
+  .cover .subline {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: {{ palette.ink_muted }};
+    max-width: 820px;
+  }
+
+  /* Body: numbered step */
+  .step-slide { justify-content: flex-start; }
+  .step-slide .step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    margin-top: 80px;
+  }
+  .step-slide .number-badge {
+    flex: 0 0 140px;
+    width: 140px;
+    height: 140px;
+    background: {{ palette.primary }};
+    color: {{ palette.on_primary }};
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: 88px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .step-slide .step-content { flex: 1; padding-top: 8px; }
+  .step-slide .step-title {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: {{ palette.ink }};
+    margin-bottom: 24px;
+  }
+  .step-slide .step-body {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: {{ palette.ink_muted }};
+  }
+  .step-slide .step-body strong { color: {{ palette.ink }}; font-weight: 600; }
+
+  /* Takeaway */
+  .takeaway {
+    background: {{ palette.ink }};
+    color: {{ palette.background }};
+    justify-content: center;
+  }
+  .takeaway .eyebrow { color: {{ palette.primary }}; }
+  .takeaway .title {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: {{ palette.background }};
+    margin-bottom: 32px;
+  }
+  .takeaway .body {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.75);
+    max-width: 820px;
+  }
+  .takeaway .footer .brand { color: rgba(255,255,255,0.6); }
+  .takeaway .footer .page-num { color: rgba(255,255,255,0.6); }
+
+  /* CTA */
+  .cta {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: {{ palette.primary }};
+    color: {{ palette.on_primary }};
+  }
+  .cta .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: {{ palette.on_primary }};
+    margin-bottom: 48px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .cta .avatar .placeholder {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 72px;
+    color: {{ palette.primary }};
+  }
+  .cta .primary {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.15;
+    margin-bottom: 32px;
+    max-width: 820px;
+  }
+  .cta .secondary {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 32px;
+    font-weight: 500;
+    opacity: 0.92;
+  }
+  .cta .footer-inverse {
+    position: absolute;
+    bottom: 48px;
+    font-family: {{ typography.body_family | safe }};
+    font-size: {{ typography.sizes.footer }}px;
+    color: {{ palette.on_primary }};
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<section class="slide cover">
+  <span class="number">{{ '%02d' % (slides|length) }}</span>
+  <div class="eyebrow">{{ cover.eyebrow | default('The framework') }}</div>
+  <h1 class="hook">{{ cover.hook | safe }}</h1>
+  {% if cover.subline %}<p class="subline">{{ cover.subline }}</p>{% endif %}
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+    <span class="page-num">01</span>
+  </div>
+</section>
+
+<!-- Steps -->
+{% for slide in slides %}
+<section class="slide step-slide">
+  <div class="eyebrow">Step {{ loop.index }} of {{ slides|length }}</div>
+  <div class="step-row">
+    <div class="number-badge">{{ '%02d' % loop.index }}</div>
+    <div class="step-content">
+      <h2 class="step-title">{{ slide.title }}</h2>
+      <p class="step-body">{{ slide.body | safe }}</p>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+    <span class="page-num">{{ '%02d' % (loop.index + 1) }}</span>
+  </div>
+</section>
+{% endfor %}
+
+<!-- Takeaway -->
+<section class="slide takeaway">
+  <div class="eyebrow">The takeaway</div>
+  <h2 class="title">{{ takeaway.title }}</h2>
+  <p class="body">{{ takeaway.body }}</p>
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+    <span class="page-num">{{ '%02d' % (slides|length + 2) }}</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="slide cta">
+  <div class="avatar">
+    {% if headshot_path %}
+      <img src="{{ headshot_path }}" alt="{{ brand.owner_name }}">
+    {% else %}
+      <span class="placeholder">{{ brand.initials }}</span>
+    {% endif %}
+  </div>
+  <div class="primary">{{ cta.primary }}</div>
+  <div class="secondary">{{ cta.secondary }}</div>
+  <div class="footer-inverse">{{ brand.footer_line }}</div>
+</section>
+
+</body>
+</html>
