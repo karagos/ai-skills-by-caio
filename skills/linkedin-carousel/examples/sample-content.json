@@ -1,0 +1,35 @@
+{
+  "template": "executive-minimal",
+  "palette": "brand",
+  "cover": {
+    "hook": "Most professionals use LinkedIn <span class=\"accent\">wrong</span>.",
+    "subline": "They post updates. The ones building real influence publish carousels.",
+    "eyebrow": "LinkedIn Strategy"
+  },
+  "slides": [
+    {
+      "title": "Updates disappear.",
+      "body": "A text post lives in the feed for a few hours. Then the algorithm buries it. You gain almost nothing for the effort."
+    },
+    {
+      "title": "Carousels compound.",
+      "body": "Multi-slide posts get 3x the dwell time. LinkedIn rewards dwell time. Your post keeps resurfacing for days."
+    },
+    {
+      "title": "One idea per slide.",
+      "body": "The biggest mistake is cramming. Each slide should say <strong>one thing</strong>. Give the reader room to process."
+    },
+    {
+      "title": "Start with the hook.",
+      "body": "Slide one has one job: stop the scroll. One bold sentence. One uncomfortable truth. Make them swipe."
+    }
+  ],
+  "takeaway": {
+    "title": "Carousels are compounding content.",
+    "body": "Every post builds on the last. Do this consistently and your profile stops being a resume. It becomes a brand."
+  },
+  "cta": {
+    "primary": "Follow for more on LinkedIn content strategy.",
+    "secondary": "yourwebsite.com"
+  }
+}

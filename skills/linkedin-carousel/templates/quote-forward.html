@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ cover.hook }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; }
+  body {
+    font-family: {{ typography.body_family | safe }};
+    color: {{ palette.ink }};
+    background: {{ palette.background }};
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    padding: {{ canvas.padding.top }}px {{ canvas.padding.right }}px {{ canvas.padding.bottom }}px {{ canvas.padding.left }}px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-child { break-after: auto; }
+
+  /* Full-bleed orange slide (cover, takeaway, CTA, every other body) */
+  .slide-orange {
+    background: {{ palette.primary }};
+    color: {{ palette.on_primary }};
+  }
+  .slide-white {
+    background: {{ palette.background }};
+    color: {{ palette.ink }};
+  }
+
+  .quote-mark {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 280px;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    opacity: 0.3;
+    position: absolute;
+    top: 48px;
+    left: 72px;
+  }
+  .slide-white .quote-mark { color: {{ palette.primary }}; opacity: 0.5; }
+  .slide-orange .quote-mark { color: {{ palette.on_primary }}; }
+
+  .footer {
+    position: absolute;
+    bottom: 48px;
+    left: {{ canvas.padding.left }}px;
+    right: {{ canvas.padding.right }}px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: {{ typography.body_family | safe }};
+    font-size: {{ typography.sizes.footer }}px;
+    letter-spacing: 0.5px;
+  }
+  .slide-white .footer { color: {{ palette.ink_muted }}; }
+  .slide-orange .footer { color: {{ palette.footer_muted }}; }
+  .footer .brand { font-weight: 500; }
+
+  /* Cover: orange */
+  .cover {
+    justify-content: flex-end;
+  }
+  .cover .hook {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 800;
+    font-size: {{ typography.sizes.quote_forward_main }}px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    margin-bottom: 48px;
+  }
+  .cover .subline {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.4;
+    opacity: 0.92;
+    max-width: 820px;
+    margin-bottom: 60px;
+  }
+  .cover .swipe-hint {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  /* Body alternating */
+  .body-slide {
+    justify-content: center;
+  }
+  .body-slide .slide-title {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin-bottom: 32px;
+    max-width: 880px;
+    margin-top: 80px;
+  }
+  .body-slide .slide-body {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.45;
+    max-width: 880px;
+  }
+  .slide-white .slide-body { color: {{ palette.ink_muted }}; }
+  .slide-orange .slide-body { color: {{ palette.on_primary }}; opacity: 0.95; }
+  .body-slide .slide-body strong { font-weight: 600; }
+  .slide-white .slide-body strong { color: {{ palette.ink }}; }
+  .slide-orange .slide-body strong { opacity: 1; }
+
+  /* Takeaway: orange with large quote */
+  .takeaway {
+    justify-content: center;
+  }
+  .takeaway .label {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+  .takeaway .title {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 40px;
+    max-width: 900px;
+  }
+  .takeaway .body {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.45;
+    opacity: 0.92;
+    max-width: 820px;
+  }
+
+  /* CTA */
+  .cta {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cta .avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: {{ palette.on_primary }};
+    margin-bottom: 48px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgba(255,255,255,0.3);
+  }
+  .cta .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .cta .avatar .placeholder {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 72px;
+    color: {{ palette.primary }};
+  }
+  .cta .primary {
+    font-family: {{ typography.heading_family | safe }};
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.12;
+    margin-bottom: 32px;
+    max-width: 860px;
+  }
+  .cta .secondary {
+    font-family: {{ typography.body_family | safe }};
+    font-size: 32px;
+    font-weight: 500;
+    opacity: 0.92;
+  }
+  .cta .footer { justify-content: center; }
+</style>
+</head>
+<body>
+
+<!-- Cover (orange) -->
+<section class="slide slide-orange cover">
+  <div class="quote-mark">&#8220;</div>
+  <h1 class="hook">{{ cover.hook | safe }}</h1>
+  {% if cover.subline %}<p class="subline">{{ cover.subline }}</p>{% endif %}
+  <div class="swipe-hint"><span>Swipe</span><span>→</span></div>
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+    <span class="page-num">01</span>
+  </div>
+</section>
+
+<!-- Body slides alternating -->
+{% for slide in slides %}
+<section class="slide body-slide {% if loop.index is even %}slide-orange{% else %}slide-white{% endif %}">
+  {% if loop.index is odd %}<div class="quote-mark">&#8220;</div>{% endif %}
+  <h2 class="slide-title">{{ slide.title }}</h2>
+  <p class="slide-body">{{ slide.body | safe }}</p>
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+    <span class="page-num">{{ '%02d' % (loop.index + 1) }}</span>
+  </div>
+</section>
+{% endfor %}
+
+<!-- Takeaway (orange) -->
+<section class="slide slide-orange takeaway">
+  <div class="quote-mark">&#8220;</div>
+  <div class="label">The takeaway</div>
+  <h2 class="title">{{ takeaway.title }}</h2>
+  <p class="body">{{ takeaway.body }}</p>
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+    <span class="page-num">{{ '%02d' % (slides|length + 2) }}</span>
+  </div>
+</section>
+
+<!-- CTA (white with orange avatar halo) -->
+<section class="slide slide-white cta">
+  <div class="avatar" style="background: {{ palette.primary }};">
+    {% if headshot_path %}
+      <img src="{{ headshot_path }}" alt="{{ brand.owner_name }}">
+    {% else %}
+      <span class="placeholder" style="color: {{ palette.on_primary }};">{{ brand.initials }}</span>
+    {% endif %}
+  </div>
+  <div class="primary">{{ cta.primary }}</div>
+  <div class="secondary" style="color: {{ palette.ink_muted }};">{{ cta.secondary }}</div>
+  <div class="footer">
+    <span class="brand">{{ brand.footer_line }}</span>
+  </div>
+</section>
+
+</body>
+</html>
